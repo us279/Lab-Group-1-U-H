@@ -5,5 +5,7 @@ def test_stations_by_distance():
     stations= build_station_list()
     stations_and_distance = stations_by_distance(stations, p)
     assert  isinstance(stations_and_distance, list)
+    for i in stations_and_distance:
+        assert isinstance(i, tuple)
 
 
