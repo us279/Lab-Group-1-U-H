@@ -18,5 +18,8 @@ def stations_by_distance(stations, p):      #takes list of stations and point p 
         station_and_distance.append((station, distance))      #add tuple of station (along with all its data) and its distance from p to a collectiove list
     return sorted_by_key(station_and_distance, 1)       #return the list we just made, sorted by distance, the 2nd key in the tuple
 
-
-    
+""""
+def stations_within_radius(stations, centre, r):
+    #want to return a list of stations within radius r of geographic coordinate x
+    if r < haversine(station.coord, p):
+"""
