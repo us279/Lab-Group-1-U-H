@@ -41,23 +41,23 @@ def stations_by_river(stations): #want to create a function that returns a dicti
     r_n_w_s = rivers_with_station(stations)
     stations = build_station_list()
     def stations_on_each_river(rivers, stations):     #need list of all stations on a river, listed for all rivers, create new function that returns this
-        stations_on_each_river_list = [[] for i in range(len(rivers))]
+        stations_on_each_river_list = [[] for i in range(len(rivers))] #create list of empty lists, each corresponds to one river
         j=0
-        dict_element_list = []
-        for river_name in rivers:
-            for station in stations:
-                if river_name == station.name:
-                    stations_on_each_river_list[j].append(station)
-            dict_element_list.append({river_name: stations_on_each_river_list[j]})
-            j+=1
+        dict_element_list = [] #empty list that will store dictionaries that only contain one river key for now
+        for river_name in rivers:   #iterate for each river
+            for station in stations: #iterate for each station
+                if river_name == station.name: #if the station is on the river we are currently searching for
+                    stations_on_each_river_list[j].append(station) #add the station to the rivers corresponding list
+            dict_element_list.append({river_name: stations_on_each_river_list[j]}) #add the singular dictionary {river: stations on it} to a list of dictionaries
+            j+=1 #move to the next empty list fo the next river
 
-        return stations_on_each_river_list #we are returning a list of dictionaries
+        return stations_on_each_river_list #we are returning a list of dictionaries of form {river: stations on it}
 
-    dict_list = stations_on_each_river(r_n_w_s, stations)
+    dict_list = stations_on_each_river(r_n_w_s, stations) #call function we just made to generate list of dictionary elements
     dictionary = {}
-    for k in dict_list:
+    for k in dict_list: #add elements to one main dictionary
         dictionary.update(k)
-    return dictionary
+    return dictionary 
 
 
 
