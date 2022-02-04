@@ -7,5 +7,5 @@ full_data_within_radius = stations_within_radius(stations, p, r) #make list of s
 names_within_radius = []
 for i in full_data_within_radius:  #make list of only the names within radius, we dont care about rest of information. Sort this list
     names_within_radius.append(i.name)
-sorted_nwr = sorted(names_within_radius)
-print(sorted_nwr)
+names_within_radius.sort()
+print(names_within_radius)
