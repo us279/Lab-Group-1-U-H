@@ -19,4 +19,3 @@ def s_o_r(river_name, stations): #repeating the same process for a few rivers, s
 print('\n Stations on River Aire: \n', s_o_r('River Aire', stations)) #call the function for the rivers we want, with some formatting
 print('\n Stations on River Cam: \n', s_o_r('River Cam', stations))
 print('\n Stations on River Thames: \n', s_o_r('River Thames', stations))
-

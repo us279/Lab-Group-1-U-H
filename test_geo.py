@@ -2,6 +2,8 @@ from floodsystem.geo import stations_by_distance
 from floodsystem.stationdata import build_station_list
 from floodsystem.geo import stations_within_radius
 from floodsystem.station import MonitoringStation
+from floodsystem.geo import rivers_with_station
+from floodsystem.geo import stations_by_river
 def test_stations_by_distance():
     p=(52.2053, 0.1218)
     tol = 1e-5
@@ -28,3 +30,18 @@ def test_stations_within_radius():
     sorted_nwr = sorted(names_within_radius)
     assert (sorted_nwr)[0] == 'Bin Brook' #check known values
     assert (sorted_nwr)[-1] == 'Stapleford'
+
+def test_rivers_with_station(): #should return a set of length 950, containing river name strings
+    stations= build_station_list()
+    river_names = rivers_with_station(stations)
+    assert isinstance(river_names, set)
+    for i in river_names:
+        assert isinstance(i, str)
+    assert len(river_names)==950
+
+def test_stations_by_river(): #function should return a dictionary mapping river keys to the stations on that river 
+    stations= build_station_list()
+    dictionary = stations_by_river(stations)
+    assert isinstance(dictionary, dict)
+    assert len(dictionary) == len(rivers_with_station(stations)) #check that every river is in dictionary
+   
