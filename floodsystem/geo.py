@@ -59,7 +59,26 @@ def stations_by_river(stations): #want to create a function that returns a dicti
         dictionary.update(k)
     return dictionary 
 
-
+#Task 1E Uday Singh
+def rivers_by_station_number(stations,N):
+    #list of tuples
+    dictionary = stations_by_river(stations) 
+    num_of_stations_per_river=[]
+    for river in dictionary:
+        num_of_stations_per_river.append((river,len(dictionary[river])))
+    #sorts list of tuples in descending order.
+    num_of_stations_per_river.sort(key=lambda tup: tup[0])
+    num_of_stations_per_river.sort(key=lambda tup: tup[1], reverse=True)
+    #return first N terms in list of tuples
+    n_s_r=[]
+    n=1
+    x=0
+    while n<=N:
+        n_s_r.append(num_of_stations_per_river[x])
+        x +=1
+        if num_of_stations_per_river[x][1]>num_of_stations_per_river[x+1][1]:    
+            n+=1
+    return(n_s_r)
 
 
                

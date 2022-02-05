@@ -4,6 +4,7 @@ from floodsystem.geo import stations_within_radius
 from floodsystem.station import MonitoringStation
 from floodsystem.geo import rivers_with_station
 from floodsystem.geo import stations_by_river
+from floodsystem.geo import rivers_by_station_number
 def test_stations_by_distance():
     p=(52.2053, 0.1218)
     tol = 1e-5
@@ -45,3 +46,11 @@ def test_stations_by_river(): #function should return a dictionary mapping river
     assert isinstance(dictionary, dict)
     assert len(dictionary) == len(rivers_with_station(stations)) #check that every river is in dictionary
    
+def test_river_by_station_number():
+    stations= build_station_list()
+    n_s_r = rivers_by_station_number(stations, 9)
+    assert isinstance(n_s_r,list)
+    for i in n_s_r:
+        assert i isinstance(i,tuple)
+    assert n_s_r[0] == ('River Thames', 55)
+    
