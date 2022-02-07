@@ -14,7 +14,8 @@ from haversine import haversine, Unit
 from floodsystem.stationdata import build_station_list
 
 #Task1B Henry Wall
-def stations_by_distance(stations, p):      #takes list of stations and point p which we want to know the distance away from
+def stations_by_distance(stations, p):  
+    "this function takes list of stations and point p which we want to know the distance away from, and returns sorted list of stations with distance from p"
     station_and_distance = []
     for station in stations:          #for each individual station in list of stations
         distance = haversine(station.coord, p)        #calculate distance from p
@@ -24,6 +25,7 @@ def stations_by_distance(stations, p):      #takes list of stations and point p 
 
 #Task1C Henry Wall
 def stations_within_radius(stations, centre, r): #want to return a list of stations within radius r of geographic coordinate x
+    "This function returns a list of stations within radius r of a geographical coordinate, it takes a list of stations, centre coordiante and radius"
     close_stations=[]
     for station in stations:
         if  haversine(station.coord, centre) < r:
@@ -32,12 +34,14 @@ def stations_within_radius(stations, centre, r): #want to return a list of stati
             
 #Task 1D Henry Wall
 def rivers_with_station(stations): #want to return a list of rivers with stations
+    "This function returns a list of rivers that have stations from a list of stations inputted"
     r_w_s = []
     for i in stations: #for each monitoring station, add its river to a list, this is obviously a list of rivers with monitoring stations
         r_w_s.append(i.river)
     return set(r_w_s) #return a set so we get no repeats
 
 def stations_by_river(stations): #want to create a function that returns a dictionary mapping river names to a list of station objects along river
+    "This function creates a dictionary that maps river keys to their associated station values, it takes a list of stations"
     r_n_w_s = rivers_with_station(stations)
     stations = build_station_list()
     def stations_on_each_river(rivers, stations):     #need list of all stations on a river, listed for all rivers, create new function that returns this
