@@ -45,7 +45,7 @@ def test_stations_by_river(): #function should return a dictionary mapping river
     dictionary = stations_by_river(stations)
     assert isinstance(dictionary, dict)
     assert len(dictionary) == len(rivers_with_station(stations)) #check that every river is in dictionary
-   
+
 def test_river_by_station_number():
     stations= build_station_list()
     n_s_r = rivers_by_station_number(stations, 9)
