@@ -52,5 +52,4 @@ def test_river_by_station_number():
     assert isinstance(n_s_r,list)
     for i in n_s_r:
         assert isinstance(i,tuple)
-    assert n_s_r[0] == ('River Thames', 55)
     
