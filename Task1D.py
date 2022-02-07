@@ -10,6 +10,7 @@ print('First ten rivers are: \n', sorted(list(rivers))[:10]) #gives different to
 dictionary = stations_by_river(stations)
 
 def s_o_r(river_name, stations): #repeating the same process for a few rivers, so efficient to define a function
+    "This function returns list of station names on the river inputted"
     river = stations_by_river(stations)[river_name] #list of station objects
     station_names=[]
     for i in river:
