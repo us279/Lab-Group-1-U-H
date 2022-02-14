@@ -45,8 +45,21 @@ class MonitoringStation:
             return False
         elif self.typical_range[0]>self.typical_range[1]: #This returns false if the minimum value is greater than maximumu value in typical range
             return False
-        else: #If the values are what expented it returns true
+        else: #If the values are what expected it returns true
             return True
+    
+
+    #2B Henry Wall
+    def relative_water_level(self):
+        "This function returns latest water level as a fraction of the typical range"
+        if self.latest_level == None:   #if no data
+            return None
+        elif self.typical_range_consistent() == False:  #if data is inconsistent
+            return None
+        elif self.typical_range_consistent() == True:
+            fraction = (self.latest_level-self.typical_range[0])/(self.typical_range[1]-self.typical_range[0])
+            
+            return fraction
 
 #1F Uday Singh
 def inconsistent_typical_range_stations(stations):
