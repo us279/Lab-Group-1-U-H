@@ -65,8 +65,8 @@ def stations_by_river(stations): #want to create a function that returns a dicti
 
 #Task 1E Uday Singh
 def rivers_by_station_number(stations,N):
-    #This section of code appends a tuple of river, with the number of stations per river to a list
-    dictionary = stations_by_river(stations) 
+    "This function returns the rivers in descending order of the number of stations by that river "       
+    dictionary = stations_by_river(stations)  #This section of code appends a tuple of river, with the number of stations per river to a list
     num_of_stations_per_river=[]
     for river in dictionary:
         num_of_stations_per_river.append((river,len(dictionary[river])))
