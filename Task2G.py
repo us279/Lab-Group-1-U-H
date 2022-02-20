@@ -63,19 +63,12 @@ for station in low:
     except KeyError:
         pass
 
-print("There are ")
+print("Number of stations at severe risk:")
 print(len(severe_risk))
-print('\n')
-print(" stations at severe risk")
-print("There are ")
+print("Number of stations at high risk: ")
 print(len(high_risk))
-print('\n')
-print(" stations at high risk")
-print("There are ")
+print("Number of stations at moderate risk: ")
 print(len(moderate_risk))
-print('\n')
-print(" stations at moderate risk")
-print("There are ")
+print("Number of stations at low risk: ")
 print(len(low_risk))
-print('\n')
-print(" stations at low risk")
+
