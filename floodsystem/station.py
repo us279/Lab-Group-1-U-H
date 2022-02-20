@@ -39,7 +39,7 @@ class MonitoringStation:
         d += "   typical range: {}".format(self.typical_range)
         return d
 
-#1F Uday Singh
+    #1F Uday Singh
     def typical_range_consistent(self):
         "This method checks if the typical range values entered are valid"
         if self.typical_range == None: #This returns false if there is no value stored in typical range
