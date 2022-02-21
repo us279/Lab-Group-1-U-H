@@ -22,7 +22,6 @@ def polyfit(dates, levels, p):
 #This section of code tries to find the rate of increase of water, by finding the derivative of the polynomial
 def rate_of_increase(dates, levels, p):
     poly, d0 = polyfit(dates, levels, p)
-    x = matplotlib.dates.date2num(dates)-d0
     derivative = np.polyder(poly)
     return derivative[0]
 #Task 2G Uday Singh
@@ -43,4 +42,5 @@ def water_level():
         else:
             mid.append(station)
     return low, mid, high
+
 

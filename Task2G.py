@@ -13,6 +13,7 @@ low_risk = []
 #This section of code collects information from the function water_level in analysis and allocates it to the respective list
 low, mid, high = water_level()
 
+
 #In this section of code for every station in list 'high' it computes rate of increase of water level and assesses the risk of flodding in that station depending on rate of increase.
 #The expressions except ignores any value that has an error due to being out of range or is missing a value for water level
 for station in high:
