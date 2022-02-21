@@ -11,7 +11,7 @@ from floodsystem.stationdata import update_water_levels, build_station_list
 def polyfit(dates, levels, p):
 	d0 = matplotlib.dates.date2num(dates[1])
 	x = matplotlib.dates.date2num(dates)-d0
-	y = levels
+	y = np.asarray(levels)
 	#This section of code finds the coeffiecient for the different terms in the polynomial expression
 	p_coeff = np.polyfit(x, y, p)
 	#This section of the code converts the coefficents into the polynomial expression
