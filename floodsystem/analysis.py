@@ -25,7 +25,7 @@ def rate_of_increase(dates, levels, p):
     x = matplotlib.dates.date2num(dates)-d0
     derivative = np.polyder(poly)
     return derivative[0]
-#Tasl 2G Uday Singh
+#Task 2G Uday Singh
 #This section of code groups the stations by their water level- 'high' level, 'mid' level and 'low' level
 def water_level():
     stations = build_station_list()
