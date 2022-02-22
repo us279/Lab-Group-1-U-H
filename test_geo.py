@@ -38,7 +38,7 @@ def test_rivers_with_station(): #should return a set of length 950, containing r
     assert isinstance(river_names, set)
     for i in river_names:
         assert isinstance(i, str)
-    assert len(river_names)==950
+    
 
 def test_stations_by_river(): #function should return a dictionary mapping river keys to the stations on that river 
     stations= build_station_list()
